@@ -350,7 +350,7 @@ st.markdown(
 | **Keine Kapazitätsgrenze** | Mit Kapazitäten je Standort (CFLP) und Single-Sourcing ist die LP-Schranke wieder schwach; die Lagrange-Relaxation ist das nächste Stück der Linie. |
 | **Kosten linear in Entfernung und Nachfrage** | Realistisch sind Staffeln, Straßennetze und Lieferzeiten; hier ist $c_{ij}$ Nachfrage mal Luftlinie in Zehntel-Einheiten, ganzzahlig. |
 | **Eine Ebene** | Zwei Ebenen (Werke → Verteilzentren → Filialen) und Routing (Location-Routing) sind nicht gebaut; sie überlappen mit der Tourenplanung. |
-| **Feste Anzahl statt Fixkosten (p-Median)** | Wird die Zahl der offenen Standorte vorgegeben und sind die Fixkosten 0, ist das p-Median (k-Medoids mit Entfernungen); dafür gibt es kein eigenes Stück: die k-Means-Demo erklärt k-Medoids nur, die p-Center-Demo rechnet das p-Median exakt als Vergleich. |
+| **Feste Anzahl statt Fixkosten (p-Median)** | Wird die Zahl der offenen Standorte vorgegeben und sind die Fixkosten 0, ist das p-Median (k-Medoids mit Entfernungen); dafür gibt es kein eigenes Stück: die k-Means-Demo rechnet k-Medoids (Schalter Mittelwert/Medoid) und vergleicht es mit dem exakten p-Median, die p-Center-Demo stellt das p-Median dem p-Center gegenüber. |
 | **Dual Ascent ohne volle DUALOC-Anpassung** | Die Anpassung ist vereinfacht (Kundenwert auf den niedrigsten knappen Standort senken, alle anderen erneut anheben, behalten, wenn die Summe steigt); Erlenkotters Original ist feiner und liefert oft eine noch bessere Schranke. |
 | **Erzeugte Netze** | Gleichverteilte Standorte und Kunden auf einer Karte, keine Fremddaten; die Gleichstandsnetze sind eine Konstruktion, kein Praxisfall. |
 """
