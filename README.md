@@ -1,6 +1,6 @@
 # Standortplanung – warum ist die Schranke hier fast exakt? – Streamlit-Demo
 
-*(noch nicht deployed)*
+**[→ Demo live ausprobieren](https://sebastianhanisch-standortplanung-demo.streamlit.app/)**
 
 Wurzel der **Standortplanungs-Linie** der "Konzepte"-Reihe für die Website "Sebastian Hanisch – Operations Research und Machine Learning" (Erweiterung E3 der Netzwerkfluss-Planung):
 anders als die Fall-Demos im Portfolio (ein Anwendungsfall, mehrere Verfahren im Vergleich) zeigt diese Demo **ein** Modell – die **Standortplanung ohne Kapazitätsgrenze** (Uncapacitated Facility Location, UFL) – an einem wachsenden Beispiel.
