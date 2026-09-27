@@ -14,8 +14,11 @@ Die Demo zeigt, **warum** (die Kopplung x ≤ y je Kunde statt einer Summe), wie
 ```
 fixkosten-netzdesign-demo (Stück 10: schwache Schranke, geteilte Kapazität)             [gebaut, Kontrast]
 standortplanung-demo (unkapazitiert: starke Kopplung, Schranke fast exakt)               [dieses Stück]
-  ├─ kapazitierte Standortplanung + Lagrange-Relaxation                                  [geplant]
-  └─ p-Hub-Median (Hub-Standortplanung)                                                  [geplant]
+  ├─ kapazitierte-standortplanung-demo (Kapazität + Single-Sourcing, Lagrange)           [gebaut]
+  ├─ p-center-demo (Maximum statt Summe: Farthest-first, exakt per Überdeckung)          [gebaut]
+  ├─ standort-bestand-demo (Bestandskosten je Lager, Risk Pooling)                       [gebaut]
+  ├─ wettbewerbsstandort-demo (Führer und Folger, (r|p)-Centroid)                        [gebaut]
+  └─ p-hub-median-demo (Hub-Standorte mit Rabatt, Single Allocation)                     [gebaut]
 ```
 
 ## Ergebnis (Zahlen aus den Tests)

@@ -355,7 +355,7 @@ st.markdown(
 | **Erzeugte Netze** | Gleichverteilte Standorte und Kunden auf einer Karte, keine Fremddaten; die Gleichstandsnetze sind eine Konstruktion, kein Praxisfall. |
 """
 )
-st.caption("Die Standortplanungs-Linie ist als Ganzes geplant: diese Demo als Wurzel, danach die kapazitierte Standortplanung mit Lagrange-Relaxation und die Hub-Standortplanung (p-Hub-Median).")
+st.caption("Die Standortplanungs-Linie ist damit vollständig: diese Demo als Wurzel, danach die kapazitierte Standortplanung mit Lagrange-Relaxation, p-Center, Standort mit Bestand, Wettbewerbsstandort und Hub-Standorte (p-Hub-Median).")
 
 st.markdown("---")
 
