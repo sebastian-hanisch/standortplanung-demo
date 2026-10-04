@@ -129,7 +129,7 @@ with st.sidebar:
         st.session_state[KEPT["customers_slider"]] = customers
         seed_widget("fixed_slider")
         fixed = st.slider("Fixkosten-Faktor [%]", *bounds("fixed_slider"), key="fixed_slider", step=C.FIXED_STEP,
-                          help="Skaliert die Fixkosten aller Standorte. Hohe Fixkosten: wenige offene Standorte; niedrige: viele. Die schwache LP-Schranke fällt mit den Fixkosten, die starke bleibt bei fast 100 %.")
+                          help="Skaliert die Fixkosten aller Standorte. Hohe Fixkosten: wenige offene Standorte; niedrige: viele. Die schwache LP-Schranke fällt mit den Fixkosten, die starke bleibt bei Kartennetzen bei fast 100 %.")
         st.session_state[KEPT["fixed_slider"]] = fixed
         seed_widget("seed_input")
         seed = st.number_input("Zufalls-Seed", *bounds("seed_input"), key="seed_input", step=1)
@@ -306,7 +306,7 @@ if st.session_state.get("series_on"):
     st.table({"Fixkosten-Faktor": [f"{r['fixed']} %" for r in series], "offene Standorte im Optimum": [_f(r["n_open"], 1) for r in series],
               "LP-Wert = Optimum in": [f"{r['tight']} von {r['count']} Netzen" for r in series],
               "schwache / starke LP / Dual Ascent [%]": [f"{_f(r['weak'], 1)} / {_f(r['strong'], 2)} / {_f(r['dual_adj'], 1)}" for r in series]})
-    st.caption("Mit steigenden Fixkosten werden weniger Standorte geöffnet; die schwache Schranke fällt, die starke bleibt praktisch bei 100 %. Add wird mit den Fixkosten schlechter, weil es früh zu viele Standorte öffnet, die es später nicht mehr schließt.")
+    st.caption("Mit steigenden Fixkosten werden weniger Standorte geöffnet; die schwache Schranke fällt. Bei Kartennetzen bleibt die starke praktisch bei 100 %, und Add wird mit den Fixkosten schlechter, weil es früh zu viele Standorte öffnet, die es später nicht mehr schließt; bei Gleichstandsnetzen fällt auch die starke Schranke (bis auf etwa 97 %), und Add wird nicht schlechter.")
 
 st.subheader("🔬 Gilt das in jedem Netz?")
 st.caption("40 feste Netze mit den gewählten Größen: Schranken, Ganzzahligkeit der starken LP, Abstände der Heuristiken, Dual Ascent.")
@@ -381,6 +381,6 @@ st.markdown("---")
 
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Standortplanung: von der Wahl zum Wettbewerb](https://sebastianhanisch.net/konzepte-standortplanung.html)."
 )
