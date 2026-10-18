@@ -82,7 +82,7 @@ Die Einheit „bewertete Nachbarn“ ist eine Zählung, keine Uhr; sie gewichtet
 | `ufl_exact.py` | HiGHS: Optimum (MILP), starke und schwache LP, Brute Force für Kleinstnetze |
 | `ufl_evaluation.py`, `ufl_visualization.py` | Vergleiche, Reihen, Verteilungen; Karte, Kostenmatrix, Balken, Reihen |
 | `ufl_presets.py`, `ufl_constants.py` | Presets, Permalink, Regler-Grenzen, feste Seeds |
-| `tests/` | 361 Tests: Szenario, Heuristiken (Lehrnetze, Brute Force), Dual (von Hand, Zulässigkeit, Maximalität), Exakt, Presets, Zahlen (`test_claims.py`), App |
+| `tests/` | 426 Tests: Szenario, Heuristiken (Lehrnetze, Brute Force), Dual (von Hand, Zulässigkeit, Maximalität), Exakt, Presets, Zahlen (`test_claims.py`), App |
 
 Lokal starten: `pip install -r requirements.txt`, dann `streamlit run app.py`; Tests: `pip install -r requirements-dev.txt`, dann `python -m pytest tests`.
 
