@@ -83,6 +83,19 @@ Hier ist sie **fast exakt**: die LP-Relaxation liefert meist schon eine ganzzahl
 und wann UFL trotzdem schwer wird.
 """
 )
+
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/standortwahl-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Stellen Sie sich einen Händler vor, der aus mehreren möglichen Orten die Lager auswählt, die er eröffnet. Jedes Lager kostet Fixkosten, jede Belieferung kostet Wege, und jeder Kunde wird vom nächsten offenen Lager beliefert. Die Frage ist, welche Lager sich lohnen und wie weit die gefundene Auswahl höchstens vom Besten entfernt ist.
+
+Dafür rechnet die Demo eine **Untergrenze** aus, einen Kostenwert, unter dem keine Auswahl liegen kann. Dazu lockert sie die Regeln und lässt Lager probehalber nur zum Teil öffnen. Setzt man bei einem Lager die Miete **streng** an (sobald es einen Kunden ganz beliefert, zählt die ganze Miete), liegt die Untergrenze dicht am Besten. Setzt man sie **locker** an (die Miete wird anteilig nach den belieferten Kunden gerechnet), liegt sie weit darunter. Dieselbe Aufgabe, nur anders aufgeschrieben.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/standortwahl-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
 st.caption(
     "Anders als die Fall-Demos im Portfolio, die an einem Anwendungsfall mehrere Verfahren vergleichen, zeigt diese Demo - die Wurzel der Standortplanungs-Linie der \"Konzepte\"-Reihe - **ein** Modell an einem wachsenden Beispiel. "
     "Verwandt: das Fixkosten-Netzdesign (schwache Schranke), die k-Means-Demo (Depotwahl, aber ohne Fixkosten) und die Rettungsdienst-Demo (Standorte mit Verfügbarkeit)."
@@ -360,6 +373,25 @@ st.caption("Die Standortplanungs-Linie ist damit vollständig: diese Demo als Wu
 st.markdown("---")
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/standortwahl-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind Kandidaten-Standorte $I$ mit Fixkosten $f_i$, Kunden $J$ und Zuordnungskosten $c_{ij}$. Gesucht ist die Auswahl offener Standorte $y_i$ mit den geringsten Gesamtkosten, in der jeder Kunde vom billigsten offenen Standort beliefert wird. Die Untergrenzen (starke und schwache LP, Dual) schätzen diese Kosten von unten ab.
+
+| Symbol | Bedeutung |
+|---|---|
+| $I$, $J$ | Menge der Kandidaten-Standorte bzw. der Kunden |
+| $f_i$ | Fixkosten von Standort $i$ |
+| $c_{ij}$ | Kosten, Kunde $j$ von Standort $i$ zu beliefern (Nachfrage mal Entfernung) |
+| $y_i$ | Standort $i$ offen (1) oder geschlossen (0) |
+| $x_{ij}$ | Anteil von Kunde $j$, der von Standort $i$ beliefert wird |
+| $\lvert J\rvert$ | Zahl der Kunden |
+| $v_j$ | Kundenwert im Dual: wie viel Kunde $j$ höchstens zahlt, Summe ist die Untergrenze |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/standortwahl-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Modell (stark).** Kandidaten $I$, Kunden $J$, Fixkosten $f_i$, Zuordnungskosten $c_{ij}$:
